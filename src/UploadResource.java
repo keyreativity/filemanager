@@ -40,11 +40,7 @@ public class UploadResourse {
 	             
 	             String output = "File successfully uploaded to : " + fileLocation;  
 	             return Response.status(200).entity(output).build();  
-	         }  
-	   
-	  
-	 
-	  
+	         }    
 	  @Path("/viewfiles")
 	  @Produces(MediaType.TEXT_PLAIN)
 	  @GET

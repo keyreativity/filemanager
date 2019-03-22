@@ -12,18 +12,10 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.ResponseBuilder;
 
 @Path("/downloadfile")
-public class FileService {
+public class DownloadResource {
 
-	private static final String api_version = "1.01A rev.1";
 	private static final String FILE_FOLDER = "e://here/";
 
-	@GET
-	@Path("/version")
-
-	@Produces(MediaType.TEXT_HTML)
-	public String returnVersion() {
-		return "<p>Version: " + api_version + "</p>";
-	}
 
 	@GET
 	@Path("/download")
@@ -45,7 +37,6 @@ public class FileService {
 		NumberFormat myFormat = NumberFormat.getInstance();
 		myFormat.setGroupingUsed(true);
 
-		// Retrieve the file
 		File file = new File(FILE_FOLDER + fileName);
 		if (file.exists()) {
 			ResponseBuilder builder = Response.ok(file);
